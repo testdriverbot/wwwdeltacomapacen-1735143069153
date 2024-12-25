@@ -1,0 +1,22 @@
+version: 4.1.32
+steps:
+  - prompt: Open the browser window.
+    commands: []
+  - prompt: Scroll down to the footer of the page.
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: Scroll down to the footer of the page.
+    commands:
+      - command: scroll
+        direction: down
+      - command: hover-text
+        text: Help Center
+        description: link in the footer section
+        action: click
+  - prompt: >-
+      Assert that the Contact Us page loads without errors.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: Help Center is visible on the page
