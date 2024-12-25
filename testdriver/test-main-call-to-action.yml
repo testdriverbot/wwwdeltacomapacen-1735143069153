@@ -1,0 +1,20 @@
+version: 4.1.32
+steps:
+  - prompt: Open the browser window.
+    commands: []
+  - prompt: Assert that the "BOOK NOW" button is visible on the page.
+    commands:
+      - command: assert
+        expect: the "BOOK NOW" button is visible
+  - prompt: Click the "BOOK NOW" button.
+    commands:
+      - command: hover-text
+        text: BOOK NOW
+        description: button to book a flight
+        action: click
+  - prompt: >-
+      Assert that the booking page is loaded successfully.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: Treat Yourself to Premium Travel is visible on the page
