@@ -1,0 +1,37 @@
+version: 4.1.32
+steps:
+  - prompt: Open the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: press-keys
+        keys:
+          - command
+          - up
+  - prompt: Click the "SIGN UP" button in the top right corner.
+    commands:
+      - command: hover-text
+        text: SIGN UP
+        description: sign up button in the top right corner
+        action: click
+  - prompt: Fill in the sign-up form with test data.
+    commands:
+      - command: scroll-until-text
+        text: First Name
+        direction: down
+      - command: hover-text
+        text: First Name
+        description: first name input field
+        action: click
+      - command: type
+        text: Test
+      - command: hover-text
+        text: Last Name
+        description: last name input field
+        action: click
+      - command: type
+        text: User
+      - command: hover-text
+        text: Email Address
+        description: email input field
+        action: click
